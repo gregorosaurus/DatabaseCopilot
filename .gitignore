@@ -363,3 +363,5 @@ FodyWeavers.xsd
 /rpmbuild/SOURCES
 /ENG.WMOCodes/.DS_Store
 .DS_Store
+
+appsettings.json
