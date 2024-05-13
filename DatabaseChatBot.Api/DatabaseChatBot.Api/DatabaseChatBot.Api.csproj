@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.18" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.10.0" />
+    <PackageReference Include="Azure.Identity" Version="1.11.3" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.18.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Plugins\" />
+    <None Remove="Plugins\OrchestratorPlugin\" />
+    <None Remove="Plugins\OrchestratorPlugin\GenerateSQL\" />
+    <None Remove="Plugins\OrchestratorPlugin\DetermineTable\" />
+    <None Remove="Services\" />
+    <None Remove="Plugins\OrchestratorPlugin\CheckPromptSafety\" />
+    <None Remove="Plugins\OrchestratorPlugin\SummarizeCSVData\" />
+    <None Remove="Sdk\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
+    <Folder Include="Plugins\OrchestratorPlugin\" />
+    <Folder Include="Plugins\OrchestratorPlugin\GenerateSQL\" />
+    <Folder Include="Plugins\OrchestratorPlugin\DetermineTable\" />
+    <Folder Include="Services\" />
+    <Folder Include="Plugins\OrchestratorPlugin\CheckPromptSafety\" />
+    <Folder Include="Plugins\OrchestratorPlugin\SummarizeCSVData\" />
+    <Folder Include="Sdk\" />
+  </ItemGroup>
+</Project>

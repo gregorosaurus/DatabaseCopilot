@@ -1,0 +1,10 @@
+﻿Summarize the following CSV table.  Note any trends, or any notable information.
+Use the following user question as a guiding question and use the CSV data to help answer this question.
+
+[UserInput]
+{{$input}}
+
+[CSVData]
+{{$csv_data}}
+
+ANSWER_TO_PROMPT:

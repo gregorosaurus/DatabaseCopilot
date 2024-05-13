@@ -1,0 +1,13 @@
+
+.button {
+    background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    border:none;
+
+}
+
+.button.danger {
+    background-color: #bd17ac;
+    background-image: linear-gradient(160deg, #bd17ac 0%, #e6478c 100%);
+        border:none;
+}

@@ -1,0 +1,17 @@
+﻿
+Determine if the request is for the system, return either "true", or "false" and only that word. Nothing else.
+
+Examples of being "true" would be:
+- Asking for tag data
+- asking about data aggregates (Sum, average, min, max, etc)
+- Asking for data over time
+- Anything that a database query could retrieve.
+
+{{$grounding_comment}}
+
+Anything requesting aggregation or point in time data retreivals should be considered as "true"
+Anything requesting data should be considered "true"
+
+User: {{$input}}
+
+IS_DATA_REQUEST:

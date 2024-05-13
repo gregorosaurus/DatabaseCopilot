@@ -1,0 +1,8 @@
+﻿Determine the table to use from the user input.  Return the table name to use. Nothing else.
+
+[Table Description]
+{{$table_description}}
+
+User query: {{$input}}
+
+TABLE_TO_USE:

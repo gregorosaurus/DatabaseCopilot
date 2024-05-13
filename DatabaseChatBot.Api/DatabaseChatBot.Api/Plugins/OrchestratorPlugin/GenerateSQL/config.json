@@ -1,0 +1,41 @@
+﻿{
+  "schema": 1,
+  "type": "completion",
+  "description": "creates a SQL query, based on the user input, that runs against the given schema. ",
+  "completion": {
+    "max_tokens": 100,
+    "temperature": 0.0,
+    "top_p": 0.0,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0
+  },
+  "input": {
+    "parameters": [
+      {
+        "name": "input",
+        "description": "The user's request.",
+        "defaultValue": ""
+      },
+      {
+        "name": "table_name",
+        "description": "The table to run the query on.",
+        "defaultValue": ""
+      },
+      {
+        "name": "history",
+        "description": "The history of the conversation.",
+        "defaultValue": ""
+      },
+      {
+        "name": "table_description",
+        "description": "The tables description.  This is the description of what the table actually contains.",
+        "defaultValue": ""
+      },
+      {
+        "name": "schema",
+        "description": "The schema of the table to query",
+        "defaultValue": ""
+      }
+    ]
+  }
+}
