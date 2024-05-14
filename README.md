@@ -1,6 +1,6 @@
 # Database Copilot
 
-![DbCopilot](docs/images/copilot.png "database copilot")
+<img src="docs/images/copilot.png" alt="copilot" style="width:200px;"/>
 
 This example repo demonstrates the capabilities of Azure Open AI to efficiently and easily query a database
 through a web chat-bot-like interface. 
@@ -71,4 +71,25 @@ Use the following template to create the app settings.
     ]
   }
 ```
+
+| Setting | Description | 
+|---------|-------------|
+| SqlConnectionString | This is the connection string of how we connect to the SQL server.  |
+| TableDescriptionsUrl | This is the local or remote url for the table descriptions json file (see below). 
+| Azure AD Section | If connecting to SQL with Entra ID / Azure AD, use this section to define the service principal used to connect to the SQL server, or any other services that the API is required to connect to. 
+
+## Table Descriptions File
+A table descriptions file is required to allow the orchestrator to determine which file to query. The schema is defined below:
+
+```json
+[
+    {
+        "tableName": "<table_name>",
+        "description": "the description of the table and the columns in that description"
+    }
+]
+```
+
+The table description URL could be a local path or an HTTP path in this example. 
+
 
