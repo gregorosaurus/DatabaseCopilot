@@ -366,3 +366,4 @@ FodyWeavers.xsd
 
 appsettings.json
 /DatabaseChatBot.Api/DatabaseChatBot.Api/appsettings.json
+.svelte-kit

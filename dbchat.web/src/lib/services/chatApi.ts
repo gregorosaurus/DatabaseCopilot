@@ -18,7 +18,28 @@ export class ChatApi{
         const response = await this.localFetch(new Request(url, requestOptions));
 
         if (!response.ok){
-            throw new Error("Invalid Rsponse, could not update flight.");
+            throw new Error("Invalid Rsponse, could not send chat message.");
+        }
+
+        return (await response.text());
+    }
+
+    async generateChart(data:string):Promise<string> {
+        const url = this.baseApi + '/api/v1/chat/chart';
+        const requestOptions = {
+            url:url,
+            method: 'POST',
+            headers: {
+              'Content-Type': 'text/plain'
+            },
+            body: data
+          };
+          
+
+        const response = await this.localFetch(new Request(url, requestOptions));
+
+        if (!response.ok){
+            throw new Error("Invalid Rsponse, could not generate chart.");
         }
 
         return (await response.text());

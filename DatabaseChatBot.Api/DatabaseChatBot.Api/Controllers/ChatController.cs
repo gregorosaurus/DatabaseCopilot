@@ -35,6 +35,27 @@ namespace DatabaseChatBot.Api.Controllers
             }
 
         }
+
+        [HttpPost]
+        [Route("chart")]
+        public async Task<IActionResult> CreateChartJSConfig()
+        {
+            using (var reader = new StreamReader(Request.Body))
+            {
+                string dataInput = await reader.ReadToEndAsync();
+
+                if (string.IsNullOrEmpty(dataInput))
+                    return BadRequest();
+
+                string? result = await _orchestrator.GenerateChartJavascript(dataInput);
+
+                return new ContentResult()
+                {
+                    Content = result,
+                    ContentType = "text/plain"
+                };
+            }
+        }
     }
 }
 

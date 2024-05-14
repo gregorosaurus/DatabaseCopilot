@@ -25,6 +25,8 @@
     <None Remove="Plugins\OrchestratorPlugin\CheckPromptSafety\" />
     <None Remove="Plugins\OrchestratorPlugin\SummarizeCSVData\" />
     <None Remove="Sdk\" />
+    <None Remove="Plugins\OrchestratorPlugin\GenerateChartJS\" />
+    <None Remove="Plugins\OrchestratorPlugin\GenerateChartJS\skprompt.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\" />
@@ -35,5 +37,16 @@
     <Folder Include="Plugins\OrchestratorPlugin\CheckPromptSafety\" />
     <Folder Include="Plugins\OrchestratorPlugin\SummarizeCSVData\" />
     <Folder Include="Sdk\" />
+    <Folder Include="Plugins\OrchestratorPlugin\GenerateChartJS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Plugins\OrchestratorPlugin\GenerateChartJS\skprompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plugins\OrchestratorPlugin\GenerateChartJS\skprompt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

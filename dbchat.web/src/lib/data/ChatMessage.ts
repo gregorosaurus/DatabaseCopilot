@@ -5,4 +5,6 @@ export class ChatMessage {
     data?:string
     timestamp:moment.Moment = moment();
     isSender:boolean = true;
+
+    chart?:any
 }

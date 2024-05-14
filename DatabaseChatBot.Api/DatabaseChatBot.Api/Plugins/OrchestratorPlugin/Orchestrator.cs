@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Microsoft.SemanticKernel;
 
 namespace DatabaseChatBot.Api.Plugins.OrchestratorPlugin
@@ -61,6 +62,31 @@ namespace DatabaseChatBot.Api.Plugins.OrchestratorPlugin
             });
 
             return result?.GetValue<string>();
+        }
+
+        public async Task<string?> GenerateChartJavascript(string inputCsvData)
+        {
+            var result = await _kernel.InvokeAsync("OrchestratorPlugin", "GenerateChartJS", new KernelArguments()
+            {
+                { "csv_data", inputCsvData }
+            });
+
+            var value = result?.GetValue<string>() ?? "";
+
+            Match codeMatch = Regex.Match(value, @"```([\s\S.]*?)```");
+            if (codeMatch.Success)
+            {
+                var code = codeMatch.Groups[1].Value;
+                return code.Replace("let chartConfig = ", "")
+                    .Replace("let chartConfig=", "")
+                    .Replace(";", "")
+                    .Replace("json","")
+                    .Trim();
+            }
+            else
+            {
+                throw new Exception($"Unable to generate code: {value}");
+            }
         }
 
         public async Task<string?> DetermineWhichTableToQueryAsync(string input)

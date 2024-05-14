@@ -68,11 +68,26 @@
             processNewChat();
         }
     }
+
+    async function chartRequested(event:any) {
+        const chatMessage:ChatMessage = event.detail;
+
+        if(chatMessage.data == undefined || chatMessage.data == ""){
+            return;
+        }
+
+        var js = await chatApi.generateChart(chatMessage.data!)
+        console.log(js);
+        chatMessage.chart = JSON.parse(js);
+
+        //refresh
+        chatMessages = chatMessages;
+    }
 </script>
 
 <div class="main">
     <div class="chat-window">
-        <ChatWindow chatMessages={chatMessages} isWaitingForResponse={waitingForResponse} />
+        <ChatWindow chatMessages={chatMessages} isWaitingForResponse={waitingForResponse} on:chartRequested={chartRequested} />
     </div>
     <div class="chat-entry-box">
         <textarea placeholder="Type your message..." bind:value={newChatMessage} on:keyup={processKey}></textarea>

@@ -1,0 +1,21 @@
+﻿{
+  "schema": 1,
+  "type": "completion",
+  "description": "Determins if the user is requesting any data information from the desired system.",
+  "completion": {
+    "max_tokens": 100,
+    "temperature": 0.0,
+    "top_p": 0.0,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0
+  },
+  "input": {
+    "parameters": [
+      {
+        "name": "data_csv",
+        "description": "The input to graph.",
+        "defaultValue": ""
+      },
+    ]
+  }
+}

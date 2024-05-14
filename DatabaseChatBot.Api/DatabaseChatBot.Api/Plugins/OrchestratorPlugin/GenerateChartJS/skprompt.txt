@@ -1,0 +1,17 @@
+﻿Create a chart js configuration for the following csv data:
+
+{{$csv_data}}
+
+Return only the json configuration. the keys should be in double quotes.
+
+Generate a bar chart if the data is categorical.
+Generate a line chart if the data is time based. 
+
+Return the json in three back ticks.  Example:
+```
+{
+//ommitted
+}
+```
+
+Make sure the returned data is valid json. 
