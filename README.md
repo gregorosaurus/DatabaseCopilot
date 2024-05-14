@@ -10,6 +10,8 @@ This repo consists of two projects
 1) A web front end for displaying the chat interface. 
 2) A web API that is responsible for orchestrating the calling of the Open AI model(s) and querying the database for results. 
 
+<img src="docs/images/screenshot.png" alt="copilot"/>
+
 ## Orchestration
 
 In this solution, the API application is orchestrating the connection to Open AI and to the SQL server.  The API application is responsible for sending data to Open AI and processing the response in a standard way. 
@@ -92,4 +94,5 @@ A table descriptions file is required to allow the orchestrator to determine whi
 
 The table description URL could be a local path or an HTTP path in this example. 
 
-
+## Deployment
+//TODO
